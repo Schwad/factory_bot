@@ -1,5 +1,5 @@
-require 'factory_bot/syntax/methods'
-require 'factory_bot/syntax/default'
+require 'factory_face/syntax/methods'
+require 'factory_face/syntax/default'
 
 module FactoryBot
   module Syntax

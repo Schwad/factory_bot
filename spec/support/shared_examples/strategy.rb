@@ -18,7 +18,7 @@ shared_examples_for "strategy without association support" do
   end
 end
 
-shared_examples_for "strategy with association support" do |factory_bot_strategy_name|
+shared_examples_for "strategy with association support" do |factory_face_strategy_name|
   let(:factory) { double("associate_factory") }
 
   def association_named(name, strategy, overrides)
@@ -33,17 +33,17 @@ shared_examples_for "strategy with association support" do |factory_bot_strategy
   end
 
   it "runs the factory with the correct overrides" do
-    association_named(:author, factory_bot_strategy_name, great: "value")
-    expect(factory).to have_received(:run).with(factory_bot_strategy_name, great: "value")
+    association_named(:author, factory_face_strategy_name, great: "value")
+    expect(factory).to have_received(:run).with(factory_face_strategy_name, great: "value")
   end
 
   it "finds the factory with the correct factory name" do
-    association_named(:author, factory_bot_strategy_name, great: "value")
+    association_named(:author, factory_face_strategy_name, great: "value")
     expect(FactoryBot).to have_received(:factory_by_name).with(:author)
   end
 end
 
-shared_examples_for "strategy with strategy: :build" do |factory_bot_strategy_name|
+shared_examples_for "strategy with strategy: :build" do |factory_face_strategy_name|
   let(:factory) { double("associate_factory") }
 
   def association_named(name, overrides)
@@ -59,7 +59,7 @@ shared_examples_for "strategy with strategy: :build" do |factory_bot_strategy_na
 
   it "runs the factory with the correct overrides" do
     association_named(:author, strategy: :build, great: "value")
-    expect(factory).to have_received(:run).with(factory_bot_strategy_name, { great: "value" })
+    expect(factory).to have_received(:run).with(factory_face_strategy_name, { great: "value" })
   end
 
   it "finds the factory with the correct factory name" do

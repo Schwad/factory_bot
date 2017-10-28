@@ -4,19 +4,19 @@ Getting Started
 Update Your Gemfile
 -------------------
 
-If you're using Rails, you'll need to change the required version of `factory_bot_rails`:
+If you're using Rails, you'll need to change the required version of `factory_face_rails`:
 
 ```ruby
-gem "factory_bot_rails", "~> 4.0"
+gem "factory_face_rails", "~> 4.0"
 ```
 
-If you're *not* using Rails, you'll just have to change the required version of `factory_bot`:
+If you're *not* using Rails, you'll just have to change the required version of `factory_face`:
 
 ```ruby
-gem "factory_bot", "~> 4.0"
+gem "factory_face", "~> 4.0"
 ```
 
-JRuby users: factory_bot works with JRuby starting with 1.6.7.2 (latest stable, as per July 2012).
+JRuby users: factory_face works with JRuby starting with 1.6.7.2 (latest stable, as per July 2012).
 JRuby has to be used in 1.9 mode, for that, use JRUBY_OPTS environment variable:
 
 ```bash
@@ -31,7 +31,7 @@ Configure your test suite
 # RSpec
 
 ```ruby
-# spec/support/factory_bot.rb
+# spec/support/factory_face.rb
 RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 end
@@ -49,7 +49,7 @@ end
 Remember to require the above file in your rails_helper since the support folder isn't eagerly loaded
 
 ```ruby
-require 'support/factory_bot'
+require 'support/factory_face'
 ```
 
 # Test::Unit
@@ -99,7 +99,7 @@ class ActiveSupport::TestCase
 end
 ```
 
-If you do not include `FactoryBot::Syntax::Methods` in your test suite, then all factory_bot methods will need to be prefaced with `FactoryBot`.
+If you do not include `FactoryBot::Syntax::Methods` in your test suite, then all factory_face methods will need to be prefaced with `FactoryBot`.
 
 Defining factories
 ------------------
@@ -140,7 +140,7 @@ following locations:
 Using factories
 ---------------
 
-factory\_bot supports several different build strategies: build, create, attributes\_for and build\_stubbed:
+factory\_face supports several different build strategies: build, create, attributes\_for and build\_stubbed:
 
 ```ruby
 # Returns a User instance that's not saved
@@ -198,7 +198,7 @@ end
 
 Aliases
 -------
-factory_bot allows you to define aliases to existing factories to make them easier to re-use. This could come in handy when, for example, your Post object has an author attribute that actually refers to an instance of a User class. While normally factory_bot can infer the factory name from the association name, in this case it will look for a author factory in vain. So, alias your user factory so it can be used under alias names.
+factory_face allows you to define aliases to existing factories to make them easier to re-use. This could come in handy when, for example, your Post object has an author attribute that actually refers to an instance of a User class. While normally factory_face can infer the factory name from the association name, in this case it will look for a author factory in vain. So, alias your user factory so it can be used under alias names.
 
 ```ruby
 factory :user, aliases: [:author, :commenter] do
@@ -268,8 +268,8 @@ Static and dynamic attributes can be created as transient attributes. Transient
 attributes will be ignored within attributes\_for and won't be set on the model,
 even if the attribute exists or you attempt to override it.
 
-Within factory_bot's dynamic attributes, you can access transient attributes as
-you would expect. If you need to access the evaluator in a factory_bot callback,
+Within factory_face's dynamic attributes, you can access transient attributes as
+you would expect. If you need to access the evaluator in a factory_face callback,
 you'll need to declare a second block argument (for the evaluator) and access
 transient attributes from there.
 
@@ -670,7 +670,7 @@ factory :user do
 end
 ```
 
-Traits can also be passed in as a list of symbols when you construct an instance from factory_bot.
+Traits can also be passed in as a list of symbols when you construct an instance from factory_face.
 
 ```ruby
 factory :user do
@@ -785,7 +785,7 @@ create :invoice, :with_amount, amount: 2
 Callbacks
 ---------
 
-factory\_bot makes available four callbacks for injecting some code:
+factory\_face makes available four callbacks for injecting some code:
 
 * after(:build)   - called after a factory is built   (via `FactoryBot.build`, `FactoryBot.create`)
 * before(:create) - called before a factory is saved  (via `FactoryBot.create`)
@@ -959,7 +959,7 @@ users_attrs = attributes_for_list(:user, 25) # array of attribute hashes
 Linting Factories
 -----------------
 
-factory_bot allows for linting known factories:
+factory_face allows for linting known factories:
 
 ```ruby
 FactoryBot.lint
@@ -981,8 +981,8 @@ when running single tests.
 Example Rake task:
 
 ```ruby
-# lib/tasks/factory_bot.rake
-namespace :factory_bot do
+# lib/tasks/factory_face.rake
+namespace :factory_face do
   desc "Verify that all FactoryBot factories are valid"
   task lint: :environment do
     if Rails.env.test?
@@ -990,7 +990,7 @@ namespace :factory_bot do
         FactoryBot.lint
       end
     else
-      system("bundle exec rake factory_bot:lint RAILS_ENV='test'")
+      system("bundle exec rake factory_face:lint RAILS_ENV='test'")
       exit $?.exitstatus
     end
   end
@@ -1037,7 +1037,7 @@ FactoryBot.lint strategy: :build
 Custom Construction
 -------------------
 
-If you want to use factory_bot to construct an object where some attributes
+If you want to use factory_face to construct an object where some attributes
 are passed to `initialize` or if you want to do something other than simply
 calling `new` on your build class, you can override the default behavior by
 defining `initialize_with` on your factory. Example:
@@ -1065,7 +1065,7 @@ end
 build(:user).name # Jane Doe
 ```
 
-Although factory_bot is written to work with ActiveRecord out of the box, it
+Although factory_face is written to work with ActiveRecord out of the box, it
 can also work with any Ruby class. For maximum compatibility with ActiveRecord,
 the default initializer builds all instances by calling `new` on your build class
 without any arguments. It then calls attribute writer methods to assign all the
@@ -1138,7 +1138,7 @@ build(:user)
 User.new('value')
 ```
 
-This prevents duplicate assignment; in versions of factory_bot before 4.0, it
+This prevents duplicate assignment; in versions of factory_face before 4.0, it
 would run this:
 
 ```ruby
@@ -1159,7 +1159,7 @@ user.name = 'value'
 Custom Strategies
 -----------------
 
-There are times where you may want to extend behavior of factory\_bot by
+There are times where you may want to extend behavior of factory\_face by
 adding a custom build strategy.
 
 Strategies define two methods: `association` and `result`. `association`
@@ -1170,7 +1170,7 @@ callbacks (with `notify`), `object` or `hash` (to get the result instance or a
 hash based on the attributes defined in the factory), and `create`, which
 executes the `to_create` callback defined on the factory.
 
-To understand how factory\_bot uses strategies internally, it's probably
+To understand how factory\_face uses strategies internally, it's probably
 easiest to just view the source for each of the four default strategies.
 
 Here's an example of composing a strategy using
@@ -1190,7 +1190,7 @@ class JsonStrategy
 end
 ```
 
-For factory\_bot to recognize the new strategy, you can register it:
+For factory\_face to recognize the new strategy, you can register it:
 
 ```ruby
 FactoryBot.register_strategy(:json, JsonStrategy)
@@ -1202,7 +1202,7 @@ This allows you to call
 FactoryBot.json(:user)
 ```
 
-Finally, you can override factory\_bot's own strategies if you'd like by
+Finally, you can override factory\_face's own strategies if you'd like by
 registering a new object in place of the strategies.
 
 Custom Callbacks
@@ -1285,7 +1285,7 @@ factories being run. One example would be to track factories based on a
 threshold of execution time.
 
 ```ruby
-ActiveSupport::Notifications.subscribe("factory_bot.run_factory") do |name, start, finish, id, payload|
+ActiveSupport::Notifications.subscribe("factory_face.run_factory") do |name, start, finish, id, payload|
   execution_time_in_seconds = finish - start
 
   if execution_time_in_seconds >= 0.5
@@ -1299,19 +1299,19 @@ throughout your test suite. If you're using RSpec, it's as simple as adding a
 `before(:suite)` and `after(:suite)`:
 
 ```ruby
-factory_bot_results = {}
+factory_face_results = {}
 config.before(:suite) do
-  ActiveSupport::Notifications.subscribe("factory_bot.run_factory") do |name, start, finish, id, payload|
+  ActiveSupport::Notifications.subscribe("factory_face.run_factory") do |name, start, finish, id, payload|
     factory_name = payload[:name]
     strategy_name = payload[:strategy]
-    factory_bot_results[factory_name] ||= {}
-    factory_bot_results[factory_name][strategy_name] ||= 0
-    factory_bot_results[factory_name][strategy_name] += 1
+    factory_face_results[factory_name] ||= {}
+    factory_face_results[factory_name][strategy_name] ||= 0
+    factory_face_results[factory_name][strategy_name] += 1
   end
 end
 
 config.after(:suite) do
-  puts factory_bot_results
+  puts factory_face_results
 end
 ```
 
@@ -1358,7 +1358,7 @@ Using Without Bundler
 If you're not using Bundler, be sure to have the gem installed and call:
 
 ```ruby
-require 'factory_bot'
+require 'factory_face'
 ```
 
 Once required, assuming you have a directory structure of `spec/factories` or
@@ -1380,7 +1380,7 @@ If you don't have a separate directory of factories and would like to define
 them inline, that's possible as well:
 
 ```ruby
-require 'factory_bot'
+require 'factory_face'
 
 FactoryBot.define do
   factory :user do

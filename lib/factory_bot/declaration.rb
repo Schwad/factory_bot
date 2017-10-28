@@ -1,7 +1,7 @@
-require 'factory_bot/declaration/static'
-require 'factory_bot/declaration/dynamic'
-require 'factory_bot/declaration/association'
-require 'factory_bot/declaration/implicit'
+require 'factory_face/declaration/static'
+require 'factory_face/declaration/dynamic'
+require 'factory_face/declaration/association'
+require 'factory_face/declaration/implicit'
 
 module FactoryBot
   # @api private

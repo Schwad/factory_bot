@@ -1,7 +1,7 @@
-require 'factory_bot/attribute/static'
-require 'factory_bot/attribute/dynamic'
-require 'factory_bot/attribute/association'
-require 'factory_bot/attribute/sequence'
+require 'factory_face/attribute/static'
+require 'factory_face/attribute/dynamic'
+require 'factory_face/attribute/association'
+require 'factory_face/attribute/sequence'
 
 module FactoryBot
   # @api private
@@ -55,7 +55,7 @@ module FactoryBot
       end
 
       def error_message
-        "factory_bot uses '#{attribute_name} value' syntax rather than '#{attribute_name} = value'"
+        "factory_face uses '#{attribute_name} value' syntax rather than '#{attribute_name} = value'"
       end
     end
   end

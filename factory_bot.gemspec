@@ -1,12 +1,12 @@
 $LOAD_PATH << File.expand_path("../lib", __FILE__)
-require 'factory_bot/version'
+require 'factory_face/version'
 
 Gem::Specification.new do |s|
-  s.name        = %q{factory_bot}
+  s.name        = %q{factory_face}
   s.version     = FactoryBot::VERSION
-  s.summary     = %q{factory_bot provides a framework and DSL for defining and
+  s.summary     = %q{factory_face provides a framework and DSL for defining and
                       using model instance factories.}
-  s.description = %q{factory_bot provides a framework and DSL for defining and
+  s.description = %q{factory_face provides a framework and DSL for defining and
                       using factories - less error-prone, more explicit, and
                       all-around easier to work with than fixtures.}
 
@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.authors = ["Josh Clayton", "Joe Ferris"]
   s.email   = ["jclayton@thoughtbot.com", "jferris@thoughtbot.com"]
 
-  s.homepage = "https://github.com/thoughtbot/factory_bot"
+  s.homepage = "https://github.com/thoughtbot/factory_face"
 
   s.add_dependency("activesupport", ">= 3.0.0")
 

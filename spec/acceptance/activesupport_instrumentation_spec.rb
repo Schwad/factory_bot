@@ -33,7 +33,7 @@ describe "using ActiveSupport::Instrumentation to track factory interaction" do
   it "tracks proper time of creating the record" do
     time_to_execute = 0
     callback = ->(name, start, finish, id, payload) { time_to_execute = finish - start }
-    ActiveSupport::Notifications.subscribed(callback, "factory_bot.run_factory") do
+    ActiveSupport::Notifications.subscribed(callback, "factory_face.run_factory") do
       FactoryBot.build(:slow_user)
     end
 
@@ -53,7 +53,7 @@ describe "using ActiveSupport::Instrumentation to track factory interaction" do
       tracked_invocations[factory_name][:factory] = factory
     end
 
-    ActiveSupport::Notifications.subscribed(callback, "factory_bot.run_factory") do
+    ActiveSupport::Notifications.subscribed(callback, "factory_face.run_factory") do
       FactoryBot.build_list(:slow_user, 2)
       FactoryBot.build_list(:user, 5)
       FactoryBot.create_list(:user, 2)

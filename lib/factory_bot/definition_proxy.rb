@@ -77,7 +77,7 @@ module FactoryBot
     #
     # are equivalent.
     #
-    # If no argument or block is given, factory_bot will look for a sequence
+    # If no argument or block is given, factory_face will look for a sequence
     # or association with the same name. This means that:
     #
     #   factory :user do

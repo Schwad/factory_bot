@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
                       using factories - less error-prone, more explicit, and
                       all-around easier to work with than fixtures.}
   s.post_install_message = "The factory_girl gem has been deprecated and has "\
-                           "been replaced by factory_bot. Please switch to "\
-                           "factory_bot as soon as possible."
+                           "been replaced by factory_face. Please switch to "\
+                           "factory_face as soon as possible."
 
   s.files         = `git ls-files`.split("\n").reject { |f| f.match(%r{^(spec|features)/}) }
 
