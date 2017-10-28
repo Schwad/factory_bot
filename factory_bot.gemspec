@@ -18,7 +18,7 @@ Gem::Specification.new do |s|
   s.authors = ["Josh Clayton", "Joe Ferris"]
   s.email   = ["jclayton@thoughtbot.com", "jferris@thoughtbot.com"]
 
-  s.homepage = "https://github.com/thoughtbot/factory_face"
+  s.homepage = "https://github.com/schwad/factory_face"
 
   s.add_dependency("activesupport", ">= 3.0.0")
 

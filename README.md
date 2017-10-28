@@ -1,9 +1,9 @@
-# factory_face [![Build Status](https://travis-ci.org/thoughtbot/factory_face.svg)](http://travis-ci.org/thoughtbot/factory_face?branch=master) [![Dependency Status](https://gemnasium.com/thoughtbot/factory_face.svg)](https://gemnasium.com/thoughtbot/factory_face) [![Code Climate](https://codeclimate.com/github/thoughtbot/factory_face/badges/gpa.svg)](https://codeclimate.com/github/thoughtbot/factory_face)
+# factory_face [![Build Status](https://travis-ci.org/schwad/factory_face.svg)](http://travis-ci.org/schwad/factory_face?branch=master) [![Dependency Status](https://gemnasium.com/schwad/factory_face.svg)](https://gemnasium.com/schwad/factory_face) [![Code Climate](https://codeclimate.com/github/schwad/factory_face/badges/gpa.svg)](https://codeclimate.com/github/schwad/factory_face)
 
 factory_face is a fixtures replacement with a straightforward definition syntax, support for multiple build strategies (saved instances, unsaved instances, attribute hashes, and stubbed objects), and support for multiple factories for the same class (user, admin_user, and so on), including factory inheritance.
 
 If you want to use factory_face with Rails, see
-[factory_face_rails](https://github.com/thoughtbot/factory_face_rails).
+[factory_face_rails](https://github.com/schwad/factory_face_rails).
 
 _[Interested in the history of the project name?](NAME.md)_
 
@@ -61,7 +61,7 @@ More Information
 
 * [Rubygems](https://rubygems.org/gems/factory_face)
 * [Stack Overflow](http://stackoverflow.com/questions/tagged/factory-bot)
-* [Issues](https://github.com/thoughtbot/factory_face/issues)
+* [Issues](https://github.com/schwad/factory_face/issues)
 * [GIANT ROBOTS SMASHING INTO OTHER GIANT ROBOTS](http://robots.thoughtbot.com/)
 
 You may also find useful information under the [factory_girl tag on Stack Overflow](http://stackoverflow.com/questions/tagged/factory-girl).
@@ -71,11 +71,11 @@ You may also find useful information under the [factory_girl tag on Stack Overfl
 Contributing
 ------------
 
-Please see [CONTRIBUTING.md](https://github.com/thoughtbot/factory_face/blob/master/CONTRIBUTING.md).
+Please see [CONTRIBUTING.md](https://github.com/schwad/factory_face/blob/master/CONTRIBUTING.md).
 
 factory_face was originally written by Joe Ferris and is now maintained by Josh
 Clayton. Many improvements and bugfixes were contributed by the [open source
-community](https://github.com/thoughtbot/factory_face/graphs/contributors).
+community](https://github.com/schwad/factory_face/graphs/contributors).
 
 License
 -------
